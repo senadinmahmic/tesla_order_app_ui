@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tesla_order_app_ui/modules/landing/widgets/current_car_indicator.dart';
 import 'package:tesla_order_app_ui/modules/landing/widgets/landing_view_button.dart';
 import 'package:tesla_order_app_ui/routes/app_routes.dart';
 
@@ -69,6 +70,7 @@ class LandingView extends GetView<LandingController> {
               ),
               const SizedBox(height: 20),
               const CarModelsList(),
+              const CurrentCarIndicator(),
               SizedBox(height: screenSize.height < 800 ? 20 : 40),
               const CarInfo(),
               const Spacer(),

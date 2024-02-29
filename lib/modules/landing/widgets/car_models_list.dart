@@ -52,7 +52,7 @@ class CarModelsList extends GetView<LandingController> {
                         ),
                         const SizedBox(height: 20),
                         SizedBox(
-                          height: 220,
+                          height: screenSize.width < 400 ? 185 : 220,
                           width: double.infinity,
                           child: Align(
                             alignment: Alignment.bottomCenter,
@@ -69,29 +69,6 @@ class CarModelsList extends GetView<LandingController> {
               );
             },
           ),
-        ),
-        Obx(
-          () {
-            final currentPage = controller.currentPage.value;
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                carModels.length,
-                (index) => AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  margin: const EdgeInsets.symmetric(horizontal: 3),
-                  width: currentPage == index ? 18 : 8,
-                  height: 8,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: currentPage == index
-                        ? AppColors.white
-                        : AppColors.grey600,
-                  ),
-                ),
-              ),
-            );
-          },
         ),
       ],
     );
