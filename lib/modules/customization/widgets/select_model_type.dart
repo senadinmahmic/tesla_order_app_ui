@@ -30,38 +30,39 @@ class SelectModelType extends GetView<CustomizationController> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 35),
-            child: Image.asset(
-              carModels[controller.index.value].imagesByColor.values.first,
+            padding: EdgeInsets.only(bottom: screenSize.height < 800 ? 10 : 35),
+            child: SizedBox(
+              height: 160,
+              child: Image.asset(
+                carModels[controller.index.value].imagesByColor.values.first,
+              ),
             ),
           ),
-          Obx(
-            () => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    controller.selectedModelType.value =
-                        carModels[controller.index.value].performanceModel.type;
-                  },
-                  child: _modelType(
-                    carModels[controller.index.value].performanceModel.type,
-                    carModels[controller.index.value].performanceModel.price,
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  controller.selectedModelType.value =
+                      carModels[controller.index.value].performanceModel.type;
+                },
+                child: _modelType(
+                  carModels[controller.index.value].performanceModel.type,
+                  carModels[controller.index.value].performanceModel.price,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    controller.selectedModelType.value =
-                        carModels[controller.index.value].longRangeModel.type;
-                  },
-                  child: _modelType(
-                    carModels[controller.index.value].longRangeModel.type,
-                    carModels[controller.index.value].longRangeModel.price,
-                  ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  controller.selectedModelType.value =
+                      carModels[controller.index.value].longRangeModel.type;
+                },
+                child: _modelType(
+                  carModels[controller.index.value].longRangeModel.type,
+                  carModels[controller.index.value].longRangeModel.price,
                 ),
-              ],
-            ),
-          )
+              ),
+            ],
+          ),
         ],
       ),
     );
