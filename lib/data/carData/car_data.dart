@@ -1,5 +1,10 @@
 import 'package:tesla_order_app_ui/data/models/car_model.dart';
 
+enum ModelType {
+  Performance,
+  LongRange,
+}
+
 final List<CarModel> carModels = [
   CarModel(
     name: 'Model X',
@@ -12,11 +17,13 @@ final List<CarModel> carModels = [
     description:
         'The Tesla Model X is a sleek, all-electric SUV featuring distinctive falcon-wing doors and advanced autopilot capabilities. With its powerful performance and cutting-edge technology, the Model X represents the pinnacle of electric vehicle innovation.',
     performanceModel: PerformanceModel(
+      type: ModelType.Performance,
       price: '68,590',
       topSpeed: '150',
       accelerationSpeed: '2.6',
     ),
     longRangeModel: LongRangeModel(
+      type: ModelType.LongRange,
       price: '59,990',
       topSpeed: '130',
       accelerationSpeed: '3.8',
@@ -47,11 +54,13 @@ final List<CarModel> carModels = [
     description:
         'The Tesla Model S is a high-performance electric sedan with dual-motor all-wheel drive, incredible acceleration, and a spacious, luxurious interior. With its advanced technology and long-range capabilities, the Model S is the ultimate electric driving experience.',
     performanceModel: PerformanceModel(
+      type: ModelType.Performance,
       price: '94,990',
       topSpeed: '200',
       accelerationSpeed: '1.99',
     ),
     longRangeModel: LongRangeModel(
+      type: ModelType.LongRange,
       price: '79,990',
       topSpeed: '155',
       accelerationSpeed: '3.1',
@@ -82,11 +91,13 @@ final List<CarModel> carModels = [
     description:
         'The Tesla Model Y is a versatile, all-electric sedan with dual-motor all-wheel drive, advanced autopilot capabilities, and a minimalist, modern design. With its impressive range and performance, the Model 3 is the perfect combination of efficiency and innovation.',
     performanceModel: PerformanceModel(
+      type: ModelType.Performance,
       price: '56,990',
       topSpeed: '135',
       accelerationSpeed: '3.5',
     ),
     longRangeModel: LongRangeModel(
+      type: ModelType.LongRange,
       price: '49,990',
       topSpeed: '135',
       accelerationSpeed: '4.8',

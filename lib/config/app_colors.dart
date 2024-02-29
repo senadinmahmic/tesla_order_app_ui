@@ -13,4 +13,6 @@ class AppColors {
   static Color? grey800 = Colors.grey[800];
 
   static Color? red = const Color.fromRGBO(214, 41, 29, 1);
+
+  static Color? background1 = Color(0xFFf2f5f8);
 }

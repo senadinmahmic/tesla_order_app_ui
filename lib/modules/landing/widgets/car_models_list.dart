@@ -18,7 +18,7 @@ class CarModelsList extends GetView<LandingController> {
           height: screenSize.height < 800 ? 240 : 290,
           child: PageView.builder(
             controller: PageController(
-              initialPage: 1,
+              initialPage: controller.currentPage.value,
             ),
             onPageChanged: (int page) {
               controller.currentPage.value = page;

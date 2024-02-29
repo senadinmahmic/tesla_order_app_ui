@@ -1,3 +1,5 @@
+import 'package:tesla_order_app_ui/data/carData/car_data.dart';
+
 class CarModel {
   final String name;
   final String image;
@@ -29,11 +31,13 @@ class CarModel {
 }
 
 class PerformanceModel {
+  final ModelType type;
   final String price;
   final String topSpeed;
   final String accelerationSpeed;
 
   PerformanceModel({
+    required this.type,
     required this.price,
     required this.topSpeed,
     required this.accelerationSpeed,
@@ -41,11 +45,13 @@ class PerformanceModel {
 }
 
 class LongRangeModel {
+  final ModelType type;
   final String price;
   final String topSpeed;
   final String accelerationSpeed;
 
   LongRangeModel({
+    required this.type,
     required this.price,
     required this.topSpeed,
     required this.accelerationSpeed,
