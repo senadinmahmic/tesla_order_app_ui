@@ -1,0 +1,32 @@
+name: tesla_order_app_ui
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: 1.0.2
+  get: 4.6.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/model_colors/model_s/
+    - assets/images/model_colors/model_x/
+    - assets/images/model_colors/model_y/
+  fonts:
+    - family: Play
+      fonts:
+        - asset: assets/fonts/Play-Bold.ttf
+        - asset: assets/fonts/Play-Regular.ttf
