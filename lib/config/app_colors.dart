@@ -14,5 +14,5 @@ class AppColors {
 
   static Color? red = const Color.fromRGBO(214, 41, 29, 1);
 
-  static Color? background1 = Color(0xFFf2f5f8);
+  static Color? background1 = const Color.fromRGBO(232, 235, 238, 1);
 }

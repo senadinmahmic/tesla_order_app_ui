@@ -32,7 +32,7 @@ class CarModel {
 
 class PerformanceModel {
   final ModelType type;
-  final String price;
+  final int price;
   final String topSpeed;
   final String accelerationSpeed;
 
@@ -46,7 +46,7 @@ class PerformanceModel {
 
 class LongRangeModel {
   final ModelType type;
-  final String price;
+  final int price;
   final String topSpeed;
   final String accelerationSpeed;
 

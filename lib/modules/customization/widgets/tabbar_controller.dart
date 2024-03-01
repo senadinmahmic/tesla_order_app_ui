@@ -13,6 +13,7 @@ class TabBarController extends GetView<CustomizationController> {
     return Material(
       color: AppColors.white,
       child: TabBar(
+        controller: controller.tabController,
         indicatorColor: AppColors.red,
         dividerColor: Colors.transparent,
         padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -34,7 +35,7 @@ class TabBarController extends GetView<CustomizationController> {
           _customTab('Autopilot'),
         ],
         onTap: (index) {
-          controller.currentPage.value = index;
+          controller.currentTabPage.value = index;
         },
       ),
     );

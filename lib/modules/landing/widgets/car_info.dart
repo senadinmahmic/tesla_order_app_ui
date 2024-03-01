@@ -43,7 +43,7 @@ class CarInfo extends GetView<LandingController> {
                   ),
                 ),
                 Container(
-                  height: 55, // Adjust this to fit your needs
+                  height: 55,
                   width: 1,
                   color: AppColors.grey800,
                 ),
