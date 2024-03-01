@@ -12,7 +12,7 @@ class AppColors {
   static Color? grey700 = Colors.grey[700];
   static Color? grey800 = Colors.grey[800];
 
-  static Color? red = const Color.fromRGBO(214, 41, 29, 1);
+  static Color? red = const Color.fromARGB(255, 218, 45, 33);
 
   static Color? background1 = const Color.fromRGBO(232, 235, 238, 1);
 }

@@ -1,8 +1,18 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:tesla_order_app_ui/data/models/car_model.dart';
 
 enum ModelType {
   Performance,
   LongRange,
+}
+
+enum CarColors {
+  Black,
+  White,
+  Red,
+  Blue,
+  Grey,
 }
 
 final List<CarModel> carModels = [

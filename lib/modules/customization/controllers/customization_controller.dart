@@ -16,6 +16,8 @@ class CustomizationController extends GetxController
 
   late TabController tabController;
 
+  final selectedColor = CarColors.Black.obs;
+
   final selectedModelType = ModelType.Performance.obs;
 
   @override

@@ -100,17 +100,28 @@ class CarTabInfo extends GetView<CustomizationController> {
             ],
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: BottomPriceButton(
-              onPressed: () {
-                controller.currentTabPage.value = 1;
-                controller.tabController.animateTo(1);
-              },
+        Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 80,
+                color: Colors.white,
+              ),
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: BottomPriceButton(
+                  onPressed: () {
+                    controller.currentTabPage.value = 1;
+                    controller.tabController.animateTo(1);
+                  },
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );
