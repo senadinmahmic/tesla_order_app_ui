@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
 import 'package:tesla_order_app_ui/modules/customization/widgets/bottom_price_button.dart';
 
-class PriceButton extends GetView<CustomizationController> {
-  const PriceButton({super.key});
+class SelectColorTabPriceButton extends GetView<CustomizationController> {
+  const SelectColorTabPriceButton({super.key});
 
   @override
   Widget build(BuildContext context) {

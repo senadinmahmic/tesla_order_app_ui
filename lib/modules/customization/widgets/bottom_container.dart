@@ -24,7 +24,7 @@ class BottomContainer extends GetView<CustomizationController> {
             ? (screenSize.height < 800 ? 280 : 355)
             : controller.currentTabPage.value == 1
                 ? 95
-                : 150,
+                : screenSize.height * 0.4,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: const BorderRadius.only(
