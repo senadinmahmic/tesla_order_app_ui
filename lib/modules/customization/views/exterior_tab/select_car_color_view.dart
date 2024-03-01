@@ -65,11 +65,13 @@ class SelectCarColorView extends GetView<CustomizationController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'White Color',
-                      style: TextStyle(
-                        color: AppColors.black,
-                        fontSize: (screenSize.width < 400 ? 22 : 24),
+                    Obx(
+                      () => Text(
+                        '${controller.selectedColor.value.name} Color',
+                        style: TextStyle(
+                          color: AppColors.black,
+                          fontSize: (screenSize.width < 400 ? 22 : 24),
+                        ),
                       ),
                     ),
                     Text(
