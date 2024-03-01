@@ -50,7 +50,14 @@ class ColorCircle extends GetView<CustomizationController> {
                         width: 40,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: getColorFromCarColor(carColor),
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomRight,
+                            end: Alignment.topLeft,
+                            colors: [
+                              getColorFromCarColor(carColor),
+                              getColorFromCarColor(carColor).withOpacity(0.5),
+                            ],
+                          ),
                         ),
                       ),
                     ),
