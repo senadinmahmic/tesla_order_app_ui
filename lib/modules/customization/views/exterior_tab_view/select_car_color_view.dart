@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:tesla_order_app_ui/config/app_colors.dart';
 import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
-import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab/widgets/car_features.dart';
-import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab/widgets/color_circle.dart';
-import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab/widgets/colors_from_string.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab_view/widgets/car_features.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab_view/widgets/color_circle.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab_view/widgets/colors_from_string.dart';
 
 class SelectCarColorView extends GetView<CustomizationController> {
   const SelectCarColorView({super.key});
