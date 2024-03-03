@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tesla_order_app_ui/config/app_colors.dart';
+import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/interior_tab_view/widgets/interior_color_circle.dart';
 import 'package:tesla_order_app_ui/modules/customization/widgets/bottom_price_button.dart';
 
 class SelectInteriorTabBottomContent extends GetView<CustomizationController> {
@@ -29,6 +31,22 @@ class SelectInteriorTabBottomContent extends GetView<CustomizationController> {
                   fontSize: screenSize.width < 400 ? 18 : 20,
                 ),
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: InteriorColors.values.map(
+                (color) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: InteriorColorCircle(
+                      interiorColor: color,
+                      onTap: () {
+                        controller.selectedInterior.value = color;
+                      },
+                    ),
+                  );
+                },
+              ).toList(),
             ),
           ],
         ),

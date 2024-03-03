@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:flutter/material.dart';
 import 'package:tesla_order_app_ui/data/models/car_model.dart';
 
 enum ModelType {
@@ -28,6 +29,18 @@ final List<CarModel> carModels = [
       'Black': 'assets/images/model_colors/model_x/tesla_model_x_black.png',
       'White': 'assets/images/model_colors/model_x/tesla_model_x_white.png',
       'Red': 'assets/images/model_colors/model_x/tesla_model_x_red.png',
+    },
+    interiorColorInfo: {
+      InteriorColors.White: InteriorColorInfo(
+        color: Colors.white,
+        image: 'assets/images/black_white_interior.jpg',
+        price: 1000,
+      ),
+      InteriorColors.Black: InteriorColorInfo(
+        color: Colors.black,
+        image: 'assets/images/all_black_interior.jpg',
+        price: 0,
+      ),
     },
     description:
         'The Tesla Model X is a sleek, all-electric SUV featuring distinctive falcon-wing doors and advanced autopilot capabilities. With its powerful performance and cutting-edge technology, the Model X represents the pinnacle of electric vehicle innovation.',
@@ -66,6 +79,18 @@ final List<CarModel> carModels = [
       'Blue': 'assets/images/model_colors/model_s/tesla_model_s_blue.png',
       'Grey': 'assets/images/model_colors/model_s/tesla_model_s_grey.png',
     },
+    interiorColorInfo: {
+      InteriorColors.White: InteriorColorInfo(
+        color: Colors.white,
+        image: 'assets/images/white_interior.jpg',
+        price: 1000,
+      ),
+      InteriorColors.Black: InteriorColorInfo(
+        color: Colors.black,
+        image: 'assets/images/black_interior.jpg',
+        price: 0,
+      ),
+    },
     description:
         'The Tesla Model S is a high-performance electric sedan with dual-motor all-wheel drive, incredible acceleration, and a spacious, luxurious interior. With its advanced technology and long-range capabilities, the Model S is the ultimate electric driving experience.',
     performanceModel: PerformanceModel(
@@ -102,6 +127,18 @@ final List<CarModel> carModels = [
       'Red': 'assets/images/model_colors/model_y/tesla_model_y_red.png',
       'Blue': 'assets/images/model_colors/model_y/tesla_model_y_blue.png',
       'Grey': 'assets/images/model_colors/model_y/tesla_model_y_grey.png',
+    },
+    interiorColorInfo: {
+      InteriorColors.White: InteriorColorInfo(
+        color: Colors.white,
+        image: 'assets/images/white_interior.jpg',
+        price: 1000,
+      ),
+      InteriorColors.Black: InteriorColorInfo(
+        color: Colors.black,
+        image: 'assets/images/black_interior.jpg',
+        price: 0,
+      ),
     },
     description:
         'The Tesla Model Y is a versatile, all-electric sedan with dual-motor all-wheel drive, advanced autopilot capabilities, and a minimalist, modern design. With its impressive range and performance, the Model 3 is the perfect combination of efficiency and innovation.',

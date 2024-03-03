@@ -5,11 +5,11 @@ import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
 
-class ColorCircle extends GetView<CustomizationController> {
+class InteriorColorCircle extends GetView<CustomizationController> {
   final InteriorColors interiorColor;
   final VoidCallback onTap;
 
-  const ColorCircle({
+  const InteriorColorCircle({
     required this.interiorColor,
     required this.onTap,
     super.key,
@@ -82,7 +82,7 @@ class ColorCircle extends GetView<CustomizationController> {
       case InteriorColors.Black:
         return Colors.black;
       case InteriorColors.White:
-        return Colors.white;
+        return Colors.grey[100]!;
       default:
         return Colors.transparent;
     }

@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 
 class CarModel {
   final String name;
   final String image;
   final Map<String, String> imagesByColor;
+  final Map<InteriorColors, InteriorColorInfo> interiorColorInfo;
   final String description;
   final PerformanceModel performanceModel;
   final LongRangeModel longRangeModel;
@@ -18,6 +20,7 @@ class CarModel {
     required this.name,
     required this.image,
     required this.imagesByColor,
+    required this.interiorColorInfo,
     required this.description,
     required this.performanceModel,
     required this.longRangeModel,
@@ -55,5 +58,17 @@ class LongRangeModel {
     required this.price,
     required this.topSpeed,
     required this.accelerationSpeed,
+  });
+}
+
+class InteriorColorInfo {
+  final Color color;
+  final String image;
+  final int price;
+
+  InteriorColorInfo({
+    required this.color,
+    required this.image,
+    required this.price,
   });
 }

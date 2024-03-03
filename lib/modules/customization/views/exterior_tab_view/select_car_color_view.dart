@@ -94,7 +94,7 @@ class SelectCarColorView extends GetView<CustomizationController> {
                 vertical: 16,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children:
                     carModels[controller.index.value].imagesByColor.keys.map(
                   (color) {

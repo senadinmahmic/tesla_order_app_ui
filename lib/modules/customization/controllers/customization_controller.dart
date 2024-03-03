@@ -18,7 +18,7 @@ class CustomizationController extends GetxController
 
   final selectedCarColor = CarColors.Black.obs;
   final selectedModelType = ModelType.Performance.obs;
-  final selectedInterior = InteriorColors.Black.obs;
+  final selectedInterior = InteriorColors.White.obs;
 
   @override
   void onInit() {
