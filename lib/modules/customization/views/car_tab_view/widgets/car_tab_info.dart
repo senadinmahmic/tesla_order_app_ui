@@ -88,12 +88,14 @@ class CarTabInfo extends GetView<CustomizationController> {
                   vertical: 20,
                 ),
                 child: SizedBox(
-                  height: screenSize.height < 800 ? 80 : 130,
-                  child: Text(
-                    carModels[index].description,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: true,
-                    maxLines: screenSize.height < 800 ? 4 : 15,
+                  height: screenSize.height < 800 ? 90 : 130,
+                  child: SingleChildScrollView(
+                    child: Text(
+                      carModels[index].description,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                      maxLines: screenSize.height < 800 ? 15 : 15,
+                    ),
                   ),
                 ),
               ),
@@ -117,8 +119,10 @@ class CarTabInfo extends GetView<CustomizationController> {
                   onPressed: () {
                     controller.currentTabPage.value = 1;
                     controller.tabController.animateTo(1);
-                    controller.carColorPrice.value =
-                        2000; // no color prices in data!
+                    controller.selectedCarColor.value == CarColors.Black
+                        ? controller.carColorPrice.value = 0
+                        : controller.carColorPrice.value =
+                            2000; // no color prices in data!
                   },
                 ),
               ),

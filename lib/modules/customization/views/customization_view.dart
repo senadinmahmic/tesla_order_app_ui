@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab_view/widgets/select_color_tab_price_button.dart';
-import 'package:tesla_order_app_ui/modules/customization/views/interior_tab_view/widgets/select_interior_tab_price_button.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/interior_tab_view/select_interior_tab_view.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/interior_tab_view/widgets/select_interior_tab_bottom_content.dart';
 import 'package:tesla_order_app_ui/modules/customization/widgets/bottom_container.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/car_tab_view/widgets/car_tab_info.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab_view/select_car_color_view.dart';
@@ -31,32 +32,33 @@ class CustomizationView extends GetView<CustomizationController> {
           child: TabBarController(),
         ),
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Expanded(
-            child: TabBarView(
-              controller: controller.tabController,
-              children: const <Widget>[
-                SelectModelTypeView(),
-                SelectCarColorView(),
-                SizedBox(),
-                SizedBox(),
-              ],
-            ),
+          TabBarView(
+            controller: controller.tabController,
+            children: const <Widget>[
+              SelectModelTypeView(),
+              SelectCarColorView(),
+              SelectInteriorTabView(),
+              SizedBox(),
+            ],
           ),
-          Obx(
-            () {
-              final page = controller.currentTabPage.value;
-              return BottomContainer(
-                child: page == 0
-                    ? const CarTabInfo()
-                    : page == 1
-                        ? const SelectColorTabPriceButton()
-                        : page == 2
-                            ? const SelectInteriorTabPriceButton()
-                            : const SizedBox(),
-              );
-            },
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Obx(
+              () {
+                final page = controller.currentTabPage.value;
+                return BottomContainer(
+                  child: page == 0
+                      ? const CarTabInfo()
+                      : page == 1
+                          ? const SelectColorTabPriceButton()
+                          : page == 2
+                              ? const SelectInteriorTabBottomContent()
+                              : const SizedBox(),
+                );
+              },
+            ),
           ),
         ],
       ),

@@ -7,6 +7,11 @@ enum ModelType {
   LongRange,
 }
 
+enum InteriorColors {
+  White,
+  Black,
+}
+
 enum CarColors {
   Black,
   White,

@@ -50,7 +50,7 @@ class SelectCarColorView extends GetView<CustomizationController> {
               child: Obx(
                 () => Image.asset(
                   carModels[controller.index.value]
-                      .imagesByColor[controller.selectedColor.value.name]!,
+                      .imagesByColor[controller.selectedCarColor.value.name]!,
                 ),
               ),
             ),
@@ -67,7 +67,7 @@ class SelectCarColorView extends GetView<CustomizationController> {
                   children: [
                     Obx(
                       () => Text(
-                        '${controller.selectedColor.value.name} Color',
+                        '${controller.selectedCarColor.value.name} Color',
                         style: TextStyle(
                           color: AppColors.black,
                           fontSize: (screenSize.width < 400 ? 22 : 24),
@@ -93,30 +93,23 @@ class SelectCarColorView extends GetView<CustomizationController> {
                 horizontal: horizontalPadding,
                 vertical: 16,
               ),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: carModels[controller.index.value]
-                        .imagesByColor
-                        .keys
-                        .map(
-                      (color) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: ColorCircle(
-                            carColor: getCarColorFromString(color),
-                            onTap: () {
-                              controller.selectedColor.value =
-                                  getCarColorFromString(color);
-                            },
-                          ),
-                        );
-                      },
-                    ).toList(),
-                  ),
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children:
+                    carModels[controller.index.value].imagesByColor.keys.map(
+                  (color) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ColorCircle(
+                        carColor: getCarColorFromString(color),
+                        onTap: () {
+                          controller.selectedCarColor.value =
+                              getCarColorFromString(color);
+                        },
+                      ),
+                    );
+                  },
+                ).toList(),
               ),
             ),
           ),
@@ -132,7 +125,7 @@ class SelectCarColorView extends GetView<CustomizationController> {
           ),
           const CarFeatures(),
           const SizedBox(
-            height: 20,
+            height: 110,
           )
         ],
       ),

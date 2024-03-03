@@ -5,7 +5,7 @@ import 'package:tesla_order_app_ui/config/app_colors.dart';
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
 
 class TabBarController extends GetView<CustomizationController> {
-  const TabBarController({Key? key}) : super(key: key);
+  const TabBarController({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +36,7 @@ class TabBarController extends GetView<CustomizationController> {
         ],
         onTap: (index) {
           controller.currentTabPage.value = index;
+          index == 1 ? controller.carColorPrice.value = 2000 : null;
         },
       ),
     );

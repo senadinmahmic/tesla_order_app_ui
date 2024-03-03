@@ -16,9 +16,9 @@ class CustomizationController extends GetxController
 
   late TabController tabController;
 
-  final selectedColor = CarColors.Black.obs;
-
+  final selectedCarColor = CarColors.Black.obs;
   final selectedModelType = ModelType.Performance.obs;
+  final selectedInterior = InteriorColors.Black.obs;
 
   @override
   void onInit() {
@@ -28,8 +28,17 @@ class CustomizationController extends GetxController
     ever(carColorPrice, (_) => updateTotalPrice());
     ever(carInteriorPrice, (_) => updateTotalPrice());
     ever(carAutopilotPrice, (_) => updateTotalPrice());
-    initialCarPrice.value = carModels[index.value].performanceModel.price;
     tabController = TabController(length: 4, vsync: this);
+    tabController.animation!.addListener(() {
+      // Calculate the new page index based on the animation value
+      currentTabPage.value == 1 ? carColorPrice.value = 2000 : null;
+      int newPageIndex = (tabController.animation!.value).round();
+
+      if (currentTabPage.value != newPageIndex) {
+        currentTabPage.value = newPageIndex;
+      }
+    });
+    initialCarPrice.value = carModels[index.value].performanceModel.price;
     super.onInit();
   }
 
@@ -38,5 +47,14 @@ class CustomizationController extends GetxController
         carColorPrice.value +
         carInteriorPrice.value +
         carAutopilotPrice.value;
+  }
+
+  @override
+  void onClose() {
+    tabController.dispose();
+    tabController.removeListener(() {
+      currentTabPage.value = tabController.index;
+    });
+    super.onClose();
   }
 }

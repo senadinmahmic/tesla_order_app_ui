@@ -6,11 +6,11 @@ import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
 
 class ColorCircle extends GetView<CustomizationController> {
-  final CarColors carColor;
+  final InteriorColors interiorColor;
   final VoidCallback onTap;
 
   const ColorCircle({
-    required this.carColor,
+    required this.interiorColor,
     required this.onTap,
     super.key,
   });
@@ -26,8 +26,10 @@ class ColorCircle extends GetView<CustomizationController> {
           child: Center(
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              height: controller.selectedCarColor.value == carColor ? 50 : 40,
-              width: controller.selectedCarColor.value == carColor ? 50 : 40,
+              height:
+                  controller.selectedInterior.value == interiorColor ? 50 : 40,
+              width:
+                  controller.selectedInterior.value == interiorColor ? 50 : 40,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.red,
@@ -35,10 +37,12 @@ class ColorCircle extends GetView<CustomizationController> {
               child: Center(
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
-                  height:
-                      controller.selectedCarColor.value == carColor ? 50 : 40,
-                  width:
-                      controller.selectedCarColor.value == carColor ? 50 : 40,
+                  height: controller.selectedInterior.value == interiorColor
+                      ? 50
+                      : 40,
+                  width: controller.selectedInterior.value == interiorColor
+                      ? 50
+                      : 40,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppColors.grey400,
@@ -56,8 +60,8 @@ class ColorCircle extends GetView<CustomizationController> {
                             begin: Alignment.bottomRight,
                             end: Alignment.topLeft,
                             colors: [
-                              getColorFromCarColor(carColor),
-                              getColorFromCarColor(carColor).withOpacity(0.5),
+                              getInteriorColor(interiorColor),
+                              getInteriorColor(interiorColor).withOpacity(0.5),
                             ],
                           ),
                         ),
@@ -73,20 +77,14 @@ class ColorCircle extends GetView<CustomizationController> {
     );
   }
 
-  Color getColorFromCarColor(CarColors carColor) {
-    switch (carColor) {
-      case CarColors.Black:
+  Color getInteriorColor(InteriorColors color) {
+    switch (color) {
+      case InteriorColors.Black:
         return Colors.black;
-      case CarColors.White:
+      case InteriorColors.White:
         return Colors.white;
-      case CarColors.Red:
-        return Colors.red;
-      case CarColors.Blue:
-        return Colors.blue;
-      case CarColors.Grey:
-        return Colors.grey;
       default:
-        return Colors.black;
+        return Colors.transparent;
     }
   }
 }
