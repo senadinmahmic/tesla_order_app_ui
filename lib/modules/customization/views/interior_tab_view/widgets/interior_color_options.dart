@@ -24,9 +24,10 @@ class InteriorColorOptions extends GetView<CustomizationController> {
         return GestureDetector(
           onTap: () {
             controller.selectedInterior.value = interiorColors;
-            interiorColors == InteriorColors.Black
-                ? controller.selectedInterior.value = InteriorColors.Black
-                : controller.selectedInterior.value = InteriorColors.White;
+            controller.carInteriorPrice.value =
+                carModels[controller.index.value]
+                    .interiorColorInfo[interiorColors]!
+                    .price;
           },
           child: Container(
             color: Colors.transparent,
@@ -45,7 +46,10 @@ class InteriorColorOptions extends GetView<CustomizationController> {
                   ),
                   duration: const Duration(milliseconds: 100),
                   child: Text(
-                    interiorColors.toString().split('.').last,
+                    interiorColors.toString().split('.').last.replaceAll(
+                          '_',
+                          ' ',
+                        ),
                   ),
                 ),
                 AnimatedDefaultTextStyle(
@@ -59,7 +63,7 @@ class InteriorColorOptions extends GetView<CustomizationController> {
                   ),
                   duration: const Duration(milliseconds: 100),
                   child: Text(
-                    '\$$price',
+                    price == 0.toString() ? 'Included' : '\$$price',
                   ),
                 ),
               ],

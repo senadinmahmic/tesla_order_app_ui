@@ -9,8 +9,8 @@ enum ModelType {
 }
 
 enum InteriorColors {
-  White,
-  Black,
+  Black_and_White,
+  All_Black,
 }
 
 enum CarColors {
@@ -31,12 +31,12 @@ final List<CarModel> carModels = [
       'Red': 'assets/images/model_colors/model_x/tesla_model_x_red.png',
     },
     interiorColorInfo: {
-      InteriorColors.White: InteriorColorInfo(
+      InteriorColors.Black_and_White: InteriorColorInfo(
         color: Colors.white,
         image: 'assets/images/black_white_interior.jpg',
         price: 1000,
       ),
-      InteriorColors.Black: InteriorColorInfo(
+      InteriorColors.All_Black: InteriorColorInfo(
         color: Colors.black,
         image: 'assets/images/all_black_interior.jpg',
         price: 0,
@@ -80,12 +80,12 @@ final List<CarModel> carModels = [
       'Grey': 'assets/images/model_colors/model_s/tesla_model_s_grey.png',
     },
     interiorColorInfo: {
-      InteriorColors.White: InteriorColorInfo(
+      InteriorColors.Black_and_White: InteriorColorInfo(
         color: Colors.white,
         image: 'assets/images/white_interior.jpg',
         price: 1000,
       ),
-      InteriorColors.Black: InteriorColorInfo(
+      InteriorColors.All_Black: InteriorColorInfo(
         color: Colors.black,
         image: 'assets/images/black_interior.jpg',
         price: 0,
@@ -129,12 +129,12 @@ final List<CarModel> carModels = [
       'Grey': 'assets/images/model_colors/model_y/tesla_model_y_grey.png',
     },
     interiorColorInfo: {
-      InteriorColors.White: InteriorColorInfo(
+      InteriorColors.Black_and_White: InteriorColorInfo(
         color: Colors.white,
         image: 'assets/images/white_interior.jpg',
         price: 1000,
       ),
-      InteriorColors.Black: InteriorColorInfo(
+      InteriorColors.All_Black: InteriorColorInfo(
         color: Colors.black,
         image: 'assets/images/black_interior.jpg',
         price: 0,

@@ -18,7 +18,7 @@ class CustomizationController extends GetxController
 
   final selectedCarColor = CarColors.Black.obs;
   final selectedModelType = ModelType.Performance.obs;
-  final selectedInterior = InteriorColors.White.obs;
+  final selectedInterior = InteriorColors.Black_and_White.obs;
 
   @override
   void onInit() {
@@ -32,6 +32,11 @@ class CustomizationController extends GetxController
     tabController.animation!.addListener(() {
       // Calculate the new page index based on the animation value
       currentTabPage.value == 1 ? carColorPrice.value = 2000 : null;
+      currentTabPage.value == 2
+          ? carInteriorPrice.value = carModels[index.value]
+              .interiorColorInfo[selectedInterior.value]!
+              .price
+          : null;
       int newPageIndex = (tabController.animation!.value).round();
 
       if (currentTabPage.value != newPageIndex) {

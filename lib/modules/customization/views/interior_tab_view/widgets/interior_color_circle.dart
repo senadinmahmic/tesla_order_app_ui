@@ -79,9 +79,9 @@ class InteriorColorCircle extends GetView<CustomizationController> {
 
   Color getInteriorColor(InteriorColors color) {
     switch (color) {
-      case InteriorColors.Black:
+      case InteriorColors.All_Black:
         return Colors.black;
-      case InteriorColors.White:
+      case InteriorColors.Black_and_White:
         return Colors.grey[100]!;
       default:
         return Colors.transparent;
