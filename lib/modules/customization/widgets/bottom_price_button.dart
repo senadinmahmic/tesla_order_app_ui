@@ -49,8 +49,10 @@ class BottomPriceButton extends GetView<CustomizationController> {
                   ),
                 ),
               ),
-              child: const Text(
-                'NEXT',
+              child: Obx(
+                () => Text(
+                  controller.currentTabPage.value == 3 ? 'FINISH' : 'NEXT',
+                ),
               ),
             ),
           ),
