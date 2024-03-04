@@ -6,6 +6,7 @@ import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/autopilot_tab_view/widgets/autopilot_options.dart';
 import 'package:tesla_order_app_ui/modules/customization/widgets/bottom_price_button.dart';
+import 'package:tesla_order_app_ui/routes/app_routes.dart';
 
 class SelectAutoPilotBottomContent extends GetView<CustomizationController> {
   const SelectAutoPilotBottomContent({super.key});
@@ -98,7 +99,9 @@ class SelectAutoPilotBottomContent extends GetView<CustomizationController> {
                   bottom: 20,
                 ),
                 child: BottomPriceButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.SUMMARY);
+                  },
                 ),
               ),
             ),

@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:tesla_order_app_ui/modules/customization/bindings/customization_bindings.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/customization_view.dart';
+import 'package:tesla_order_app_ui/modules/summary/bindings/summary_bindings.dart';
+import 'package:tesla_order_app_ui/modules/summary/views/summary_view.dart';
 
 import 'package:tesla_order_app_ui/routes/app_routes.dart';
 import 'package:tesla_order_app_ui/modules/landing/bindings/landing_bindings.dart';
@@ -19,6 +21,11 @@ class AppPages {
       name: Routes.CUSTOMIZATION,
       page: () => const CustomizationView(),
       binding: CustomizationBindings(),
+    ),
+    GetPage(
+      name: Routes.SUMMARY,
+      page: () => const SummaryView(),
+      binding: SummaryBindings(),
     )
   ];
 }
