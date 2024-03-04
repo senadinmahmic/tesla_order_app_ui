@@ -41,8 +41,8 @@ class SelectInteriorTabBottomContent extends GetView<CustomizationController> {
                 height: 80,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    left: horizontalPadding + 15,
-                    right: horizontalPadding + 15,
+                    left: horizontalPadding,
+                    right: horizontalPadding + 20,
                     top: 15,
                   ),
                   child: Row(
@@ -68,8 +68,8 @@ class SelectInteriorTabBottomContent extends GetView<CustomizationController> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: horizontalPadding + 15,
-                  right: horizontalPadding + 15,
+                  left: horizontalPadding,
+                  right: horizontalPadding,
                   top: 5,
                 ),
                 child: Row(

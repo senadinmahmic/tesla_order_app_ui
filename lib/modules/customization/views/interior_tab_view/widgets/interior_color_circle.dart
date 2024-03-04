@@ -35,34 +35,43 @@ class InteriorColorCircle extends GetView<CustomizationController> {
                 color: AppColors.red,
               ),
               child: Center(
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  height: controller.selectedInterior.value == interiorColor
-                      ? 50
-                      : 40,
-                  width: controller.selectedInterior.value == interiorColor
-                      ? 50
-                      : 40,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.grey400,
-                  ),
-                  child: Center(
-                    child: Material(
-                      elevation: 1,
-                      shape: const CircleBorder(),
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            begin: Alignment.bottomRight,
-                            end: Alignment.topLeft,
-                            colors: [
-                              getInteriorColor(interiorColor),
-                              getInteriorColor(interiorColor).withOpacity(0.5),
-                            ],
+                child: Material(
+                  elevation: interiorColor == InteriorColors.Black_and_White &&
+                          controller.selectedInterior.value !=
+                              InteriorColors.Black_and_White
+                      ? 4
+                      : 0,
+                  borderRadius: BorderRadius.circular(50),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    height: controller.selectedInterior.value == interiorColor
+                        ? 50
+                        : 40,
+                    width: controller.selectedInterior.value == interiorColor
+                        ? 50
+                        : 40,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.grey400,
+                    ),
+                    child: Center(
+                      child: Material(
+                        elevation: 1,
+                        shape: const CircleBorder(),
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomRight,
+                              end: Alignment.topLeft,
+                              colors: [
+                                getInteriorColor(interiorColor),
+                                getInteriorColor(interiorColor)
+                                    .withOpacity(0.5),
+                              ],
+                            ),
                           ),
                         ),
                       ),

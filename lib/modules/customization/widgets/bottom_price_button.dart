@@ -18,35 +18,40 @@ class BottomPriceButton extends GetView<CustomizationController> {
       () => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            'Total: \$${controller.totalPrice.value}',
-            style: TextStyle(
-              color: AppColors.black,
-              fontSize: screenSize.width < 400 ? 20 : 22,
-              fontWeight: FontWeight.w400,
+          SizedBox(
+            width: screenSize.width * 0.4,
+            child: Text(
+              'Total: \$${controller.totalPrice.value}',
+              style: TextStyle(
+                color: AppColors.black,
+                fontSize: screenSize.width < 400 ? 20 : 22,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
-          OutlinedButton(
-            onPressed: onPressed,
-            style: ButtonStyle(
-              fixedSize: MaterialStatePropertyAll(
-                Size(
-                  screenSize.width * 0.35,
-                  45,
+          SizedBox(
+            child: OutlinedButton(
+              onPressed: onPressed,
+              style: ButtonStyle(
+                fixedSize: MaterialStatePropertyAll(
+                  Size(
+                    screenSize.width * 0.35,
+                    45,
+                  ),
+                ),
+                foregroundColor: MaterialStatePropertyAll(
+                  AppColors.black,
+                ),
+                side: MaterialStatePropertyAll(
+                  BorderSide(
+                    color: AppColors.red!,
+                    width: 2,
+                  ),
                 ),
               ),
-              foregroundColor: MaterialStatePropertyAll(
-                AppColors.black,
+              child: const Text(
+                'NEXT',
               ),
-              side: MaterialStatePropertyAll(
-                BorderSide(
-                  color: AppColors.red!,
-                  width: 2,
-                ),
-              ),
-            ),
-            child: const Text(
-              'NEXT',
             ),
           ),
         ],

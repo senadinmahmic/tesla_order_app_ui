@@ -8,17 +8,22 @@ enum ModelType {
   LongRange,
 }
 
-enum InteriorColors {
-  Black_and_White,
-  All_Black,
-}
-
 enum CarColors {
   Black,
   White,
   Red,
   Blue,
   Grey,
+}
+
+enum InteriorColors {
+  Black_and_White,
+  All_Black,
+}
+
+enum AutopilotType {
+  Autopilot,
+  Full_Self_Driving,
 }
 
 final List<CarModel> carModels = [
@@ -41,6 +46,18 @@ final List<CarModel> carModels = [
         image: 'assets/images/all_black_interior.jpg',
         price: 0,
       ),
+    },
+    autopilot: {
+      AutopilotType.Autopilot: Autopilot(
+          image: 'assets/images/tesla_autopilot/tesla_autopilot.png',
+          price: 3000,
+          description:
+              'Semi-automated system that assists a human driver by controlling certain aspects of vehicle operation, such as maintaining speed and staying within lanes, but still requires human supervision and intervention.'),
+      AutopilotType.Full_Self_Driving: Autopilot(
+          image: 'assets/images/tesla_autopilot/tesla_selfdriving.mp4',
+          price: 5000,
+          description:
+              'Fully automated system that navigates a vehicle without human intervention, using advanced sensors and algorithms to perceive and respond to the environment.'),
     },
     description:
         'The Tesla Model X is a sleek, all-electric SUV featuring distinctive falcon-wing doors and advanced autopilot capabilities. With its powerful performance and cutting-edge technology, the Model X represents the pinnacle of electric vehicle innovation.',
@@ -82,14 +99,26 @@ final List<CarModel> carModels = [
     interiorColorInfo: {
       InteriorColors.Black_and_White: InteriorColorInfo(
         color: Colors.white,
-        image: 'assets/images/white_interior.jpg',
+        image: 'assets/images/black_white_interior.jpg',
         price: 1000,
       ),
       InteriorColors.All_Black: InteriorColorInfo(
         color: Colors.black,
-        image: 'assets/images/black_interior.jpg',
+        image: 'assets/images/all_black_interior.jpg',
         price: 0,
       ),
+    },
+    autopilot: {
+      AutopilotType.Autopilot: Autopilot(
+          image: 'assets/images/tesla_autopilot/tesla_autopilot.png',
+          price: 3000,
+          description:
+              'Semi-automated system that assists a human driver by controlling certain aspects of vehicle operation, such as maintaining speed and staying within lanes, but still requires human supervision and intervention.'),
+      AutopilotType.Full_Self_Driving: Autopilot(
+          image: 'assets/images/tesla_autopilot/tesla_selfdriving.mp4',
+          price: 5000,
+          description:
+              'Fully automated system that navigates a vehicle without human intervention, using advanced sensors and algorithms to perceive and respond to the environment.'),
     },
     description:
         'The Tesla Model S is a high-performance electric sedan with dual-motor all-wheel drive, incredible acceleration, and a spacious, luxurious interior. With its advanced technology and long-range capabilities, the Model S is the ultimate electric driving experience.',
@@ -139,6 +168,18 @@ final List<CarModel> carModels = [
         image: 'assets/images/black_interior.jpg',
         price: 0,
       ),
+    },
+    autopilot: {
+      AutopilotType.Autopilot: Autopilot(
+          image: 'assets/images/tesla_autopilot/tesla_autopilot.png',
+          price: 3000,
+          description:
+              'Semi-automated system that assists a human driver by controlling certain aspects of vehicle operation, such as maintaining speed and staying within lanes, but still requires human supervision and intervention.'),
+      AutopilotType.Full_Self_Driving: Autopilot(
+          image: 'assets/images/tesla_autopilot/tesla_selfdriving.mp4',
+          price: 5000,
+          description:
+              'Fully automated system that navigates a vehicle without human intervention, using advanced sensors and algorithms to perceive and respond to the environment.'),
     },
     description:
         'The Tesla Model Y is a versatile, all-electric sedan with dual-motor all-wheel drive, advanced autopilot capabilities, and a minimalist, modern design. With its impressive range and performance, the Model 3 is the perfect combination of efficiency and innovation.',

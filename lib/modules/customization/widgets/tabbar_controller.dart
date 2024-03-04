@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:tesla_order_app_ui/config/app_colors.dart';
-import 'package:tesla_order_app_ui/data/carData/car_data.dart';
 import 'package:tesla_order_app_ui/modules/customization/controllers/customization_controller.dart';
 
 class TabBarController extends GetView<CustomizationController> {
@@ -37,13 +36,6 @@ class TabBarController extends GetView<CustomizationController> {
         ],
         onTap: (index) {
           controller.currentTabPage.value = index;
-          index == 1 ? controller.carColorPrice.value = 2000 : null;
-          index == 2
-              ? controller.carInteriorPrice.value =
-                  carModels[controller.index.value]
-                      .interiorColorInfo[controller.selectedInterior.value]!
-                      .price
-              : null;
         },
       ),
     );

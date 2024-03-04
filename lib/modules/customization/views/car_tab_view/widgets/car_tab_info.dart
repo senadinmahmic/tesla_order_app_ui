@@ -119,10 +119,6 @@ class CarTabInfo extends GetView<CustomizationController> {
                   onPressed: () {
                     controller.currentTabPage.value = 1;
                     controller.tabController.animateTo(1);
-                    controller.selectedCarColor.value == CarColors.Black
-                        ? controller.carColorPrice.value = 0
-                        : controller.carColorPrice.value =
-                            2000; // no color prices in data!
                   },
                 ),
               ),

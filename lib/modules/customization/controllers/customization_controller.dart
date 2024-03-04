@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:tesla_order_app_ui/data/carData/car_data.dart';
+import 'package:video_player/video_player.dart';
 
 class CustomizationController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -19,6 +20,10 @@ class CustomizationController extends GetxController
   final selectedCarColor = CarColors.Black.obs;
   final selectedModelType = ModelType.Performance.obs;
   final selectedInterior = InteriorColors.Black_and_White.obs;
+  final selectedAutopilot = AutopilotType.Full_Self_Driving.obs;
+
+  late VideoPlayerController videoPlayerController;
+  final isVideoMode = true.obs;
 
   @override
   void onInit() {
@@ -37,13 +42,29 @@ class CustomizationController extends GetxController
               .interiorColorInfo[selectedInterior.value]!
               .price
           : null;
+      currentTabPage.value == 3
+          ? carAutopilotPrice.value =
+              carModels[index.value].autopilot[selectedAutopilot.value]!.price
+          : null;
       int newPageIndex = (tabController.animation!.value).round();
 
       if (currentTabPage.value != newPageIndex) {
         currentTabPage.value = newPageIndex;
       }
+      if (currentTabPage.value == 3) {
+        videoPlayerController.play();
+      } else {
+        videoPlayerController.pause();
+      }
     });
     initialCarPrice.value = carModels[index.value].performanceModel.price;
+
+    videoPlayerController = VideoPlayerController.asset(
+        'assets/images/tesla_autopilot/tesla_selfdriving.mp4')
+      ..initialize().then((_) {
+        videoPlayerController.setLooping(true);
+        videoPlayerController.play();
+      });
     super.onInit();
   }
 
@@ -54,12 +75,22 @@ class CustomizationController extends GetxController
         carAutopilotPrice.value;
   }
 
+  void toggleDisplayMode() {
+    if (selectedAutopilot.value == AutopilotType.Full_Self_Driving) {
+      videoPlayerController.seekTo(Duration.zero);
+      videoPlayerController.play();
+    } else {
+      videoPlayerController.pause();
+    }
+  }
+
   @override
   void onClose() {
     tabController.dispose();
     tabController.removeListener(() {
       currentTabPage.value = tabController.index;
     });
+    videoPlayerController.dispose();
     super.onClose();
   }
 }

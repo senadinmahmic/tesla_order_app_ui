@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: 1.0.2
   get: 4.6.6
+  video_player: 2.8.2
+  flutter_launcher_icons: 0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -25,8 +27,14 @@ flutter:
     - assets/images/model_colors/model_s/
     - assets/images/model_colors/model_x/
     - assets/images/model_colors/model_y/
+    - assets/images/tesla_autopilot/
   fonts:
     - family: Play
       fonts:
         - asset: assets/fonts/Play-Bold.ttf
         - asset: assets/fonts/Play-Regular.ttf
+
+flutter_launcher_icons:
+  android: true 
+  ios: true
+  image_path: "assets/images/tesla_icon.jpg"

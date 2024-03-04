@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/autopilot_tab_view/select_autopilot_type_view.dart';
+import 'package:tesla_order_app_ui/modules/customization/views/autopilot_tab_view/widgets/select_autopilot_type_bottom_content.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/exterior_tab_view/widgets/select_color_tab_price_button.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/interior_tab_view/select_interior_tab_view.dart';
 import 'package:tesla_order_app_ui/modules/customization/views/interior_tab_view/widgets/select_interior_tab_bottom_content.dart';
@@ -40,7 +42,7 @@ class CustomizationView extends GetView<CustomizationController> {
               SelectModelTypeView(),
               SelectCarColorView(),
               SelectInteriorTabView(),
-              SizedBox(),
+              SelectAutoPilotTypeView(),
             ],
           ),
           Align(
@@ -55,7 +57,7 @@ class CustomizationView extends GetView<CustomizationController> {
                           ? const SelectColorTabPriceButton()
                           : page == 2
                               ? const SelectInteriorTabBottomContent()
-                              : const SizedBox(),
+                              : const SelectAutoPilotBottomContent(),
                 );
               },
             ),

@@ -6,6 +6,7 @@ class CarModel {
   final String image;
   final Map<String, String> imagesByColor;
   final Map<InteriorColors, InteriorColorInfo> interiorColorInfo;
+  final Map<AutopilotType, Autopilot> autopilot;
   final String description;
   final PerformanceModel performanceModel;
   final LongRangeModel longRangeModel;
@@ -21,6 +22,7 @@ class CarModel {
     required this.image,
     required this.imagesByColor,
     required this.interiorColorInfo,
+    required this.autopilot,
     required this.description,
     required this.performanceModel,
     required this.longRangeModel,
@@ -70,5 +72,17 @@ class InteriorColorInfo {
     required this.color,
     required this.image,
     required this.price,
+  });
+}
+
+class Autopilot {
+  final String image;
+  final int price;
+  final String description;
+
+  Autopilot({
+    required this.image,
+    required this.price,
+    required this.description,
   });
 }
