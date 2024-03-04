@@ -28,7 +28,7 @@ class SelectAutoPilotBottomContent extends GetView<CustomizationController> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Select Interior',
+                  'Select Autopilot Type',
                   style: TextStyle(
                     color: AppColors.grey700,
                     fontSize: screenSize.width < 400 ? 18 : 20,
@@ -100,7 +100,17 @@ class SelectAutoPilotBottomContent extends GetView<CustomizationController> {
                 ),
                 child: BottomPriceButton(
                   onPressed: () {
-                    Get.toNamed(Routes.SUMMARY);
+                    Get.toNamed(
+                      Routes.SUMMARY,
+                      arguments: {
+                        'index': controller.index.value,
+                        'selectedModelType': controller.selectedModelType.value,
+                        'selectedCarColor': controller.selectedCarColor.value,
+                        'selectedInterior': controller.selectedInterior.value,
+                        'selectedAutopilot': controller.selectedAutopilot.value,
+                        'totalPrice': controller.totalPrice.value,
+                      },
+                    );
                   },
                 ),
               ),
