@@ -160,12 +160,12 @@ final List<CarModel> carModels = [
     interiorColorInfo: {
       InteriorColors.Black_and_White: InteriorColorInfo(
         color: Colors.white,
-        image: 'assets/images/white_interior.jpg',
+        image: 'assets/images/black_white_interior.jpg',
         price: 1000,
       ),
       InteriorColors.All_Black: InteriorColorInfo(
         color: Colors.black,
-        image: 'assets/images/black_interior.jpg',
+        image: 'assets/images/all_black_interior.jpg',
         price: 0,
       ),
     },

@@ -12,95 +12,92 @@ class CarTabInfo extends GetView<CustomizationController> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    double horizontalPadding = 32.0;
     final index = controller.index.value;
     return Stack(
       children: [
-        SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Obx(
-                            () => Text(
-                              '${controller.selectedModelType.value == ModelType.Performance ? carModels[index].performanceModel.accelerationSpeed : carModels[index].longRangeModel.accelerationSpeed}s',
-                              style: TextStyle(
-                                color: AppColors.black,
-                                fontSize: screenSize.height < 800 ? 22 : 24,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            '0-60 mph',
-                            style: TextStyle(
-                              color: AppColors.black,
-                              fontSize: screenSize.height < 800 ? 12 : 14,
-                              fontWeight: FontWeight.w300,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 55,
-                      width: 1,
-                      color: AppColors.grey800,
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Obx(
-                            () => Text(
-                              '${controller.selectedModelType.value == ModelType.Performance ? carModels[index].performanceModel.topSpeed : carModels[index].longRangeModel.topSpeed}mph',
-                              style: TextStyle(
-                                color: AppColors.black,
-                                fontSize: screenSize.height < 800 ? 22 : 24,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            'Top Speed',
-                            style: TextStyle(
-                              color: AppColors.black,
-                              fontSize: screenSize.height < 800 ? 12 : 14,
-                              fontWeight: FontWeight.w300,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 32,
-                  vertical: 20,
-                ),
-                child: SizedBox(
-                  height: screenSize.height < 800 ? 90 : 130,
-                  child: SingleChildScrollView(
-                    child: Text(
-                      carModels[index].description,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: true,
-                      maxLines: screenSize.height < 800 ? 15 : 15,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Obx(
+                          () => Text(
+                            '${controller.selectedModelType.value == ModelType.Performance ? carModels[index].performanceModel.accelerationSpeed : carModels[index].longRangeModel.accelerationSpeed}s',
+                            style: TextStyle(
+                              color: AppColors.black,
+                              fontSize: screenSize.height < 800 ? 22 : 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '0-60 mph',
+                          style: TextStyle(
+                            color: AppColors.black,
+                            fontSize: screenSize.height < 800 ? 12 : 14,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
+                  Container(
+                    height: 55,
+                    width: 1,
+                    color: AppColors.grey800,
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Obx(
+                          () => Text(
+                            '${controller.selectedModelType.value == ModelType.Performance ? carModels[index].performanceModel.topSpeed : carModels[index].longRangeModel.topSpeed}mph',
+                            style: TextStyle(
+                              color: AppColors.black,
+                              fontSize: screenSize.height < 800 ? 22 : 24,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'Top Speed',
+                          style: TextStyle(
+                            color: AppColors.black,
+                            fontSize: screenSize.height < 800 ? 12 : 14,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: horizontalPadding,
+                  right: horizontalPadding,
+                  top: 20,
+                  bottom: 90,
+                ),
+                child: SingleChildScrollView(
+                  child: Text(
+                    carModels[index].description,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         Stack(
           children: [
@@ -108,7 +105,7 @@ class CarTabInfo extends GetView<CustomizationController> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 height: 80,
-                color: Colors.white,
+                color: Colors.white.withOpacity(0.2),
               ),
             ),
             Align(

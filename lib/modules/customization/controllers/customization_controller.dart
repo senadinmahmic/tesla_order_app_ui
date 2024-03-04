@@ -42,10 +42,13 @@ class CustomizationController extends GetxController
               .interiorColorInfo[selectedInterior.value]!
               .price
           : null;
-      currentTabPage.value == 3
-          ? carAutopilotPrice.value =
-              carModels[index.value].autopilot[selectedAutopilot.value]!.price
-          : null;
+      if (currentTabPage.value == 3) {
+        carAutopilotPrice.value =
+            carModels[index.value].autopilot[selectedAutopilot.value]!.price;
+        carInteriorPrice.value = carModels[index.value]
+            .interiorColorInfo[selectedInterior.value]!
+            .price;
+      }
       int newPageIndex = (tabController.animation!.value).round();
 
       if (currentTabPage.value != newPageIndex) {

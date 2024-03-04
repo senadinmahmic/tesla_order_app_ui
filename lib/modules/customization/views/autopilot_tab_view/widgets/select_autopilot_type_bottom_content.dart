@@ -61,17 +61,21 @@ class SelectAutoPilotBottomContent extends GetView<CustomizationController> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding,
-                vertical: 15,
-              ),
-              child: SizedBox(
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: horizontalPadding,
+                  right: horizontalPadding,
+                  top: 15,
+                  bottom: 90,
+                ),
                 child: Obx(
-                  () => Text(
-                    carModels[controller.index.value]
-                        .autopilot[controller.selectedAutopilot.value]!
-                        .description,
+                  () => SingleChildScrollView(
+                    child: Text(
+                      carModels[controller.index.value]
+                          .autopilot[controller.selectedAutopilot.value]!
+                          .description,
+                    ),
                   ),
                 ),
               ),
