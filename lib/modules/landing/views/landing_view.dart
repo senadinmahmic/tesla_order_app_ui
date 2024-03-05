@@ -77,7 +77,7 @@ class LandingView extends GetView<LandingController> {
               Padding(
                 padding:
                     EdgeInsets.only(bottom: screenSize.height < 800 ? 12 : 20),
-                child: LandinViewButton(
+                child: LandingViewButton(
                   onPressed: () {
                     Get.toNamed(
                       Routes.CUSTOMIZATION,

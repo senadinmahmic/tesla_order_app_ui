@@ -44,7 +44,7 @@ class SelectModelTypeView extends GetView<CustomizationController> {
             right: horizontalPadding,
           ),
           child: SizedBox(
-            height: 160,
+            height: 150,
             child: Image.asset(
               carModels[controller.index.value].imagesByColor.values.first,
             ),

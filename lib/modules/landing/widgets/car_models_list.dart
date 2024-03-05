@@ -15,7 +15,7 @@ class CarModelsList extends GetView<LandingController> {
       children: [
         const SizedBox(height: 10),
         SizedBox(
-          height: screenSize.height < 800 ? 240 : 290,
+          height: screenSize.height < 800 ? 250 : 290,
           child: PageView.builder(
             controller: PageController(
               initialPage: controller.currentPage.value,
@@ -33,9 +33,7 @@ class CarModelsList extends GetView<LandingController> {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          color: Colors.red,
-                          height: 35,
+                        SizedBox(
                           child: Text(
                             carModels[index].name,
                             style: TextStyle(
@@ -51,7 +49,7 @@ class CarModelsList extends GetView<LandingController> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 10),
                         SizedBox(
                           height: screenSize.width < 400 ? 185 : 220,
                           width: double.infinity,
@@ -59,7 +57,7 @@ class CarModelsList extends GetView<LandingController> {
                             alignment: Alignment.bottomCenter,
                             child: Image.asset(
                               carModels[index].image,
-                              width: screenSize.width < 400 ? 240 : 300,
+                              width: screenSize.width < 400 ? 230 : 300,
                             ),
                           ),
                         ),
