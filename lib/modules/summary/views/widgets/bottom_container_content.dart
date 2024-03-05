@@ -145,8 +145,11 @@ class BottomContainerContent extends GetView<SummaryController> {
                               ),
                               const SizedBox(width: 10),
                               ColorContainer(
-                                gradient1: getInteriorColor(
-                                    controller.selectedInterior.value),
+                                gradient1: controller.selectedInterior.value ==
+                                        InteriorColors.Black_and_White
+                                    ? Colors.black
+                                    : getInteriorColor(
+                                        controller.selectedInterior.value),
                                 gradient2: getInteriorColor(
                                         controller.selectedInterior.value)
                                     .withOpacity(0.5),

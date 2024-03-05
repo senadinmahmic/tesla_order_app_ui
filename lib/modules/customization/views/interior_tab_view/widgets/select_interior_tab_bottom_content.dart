@@ -17,82 +17,84 @@ class SelectInteriorTabBottomContent extends GetView<CustomizationController> {
     final horizontalPadding = screenSize.width < 400 ? 26.0 : 32.0;
     return Stack(
       children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: 25,
-                left: horizontalPadding,
-                right: horizontalPadding,
-              ),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Select Interior',
-                  style: TextStyle(
-                    color: AppColors.grey700,
-                    fontSize: screenSize.width < 400 ? 18 : 20,
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 25,
+                  left: horizontalPadding,
+                  right: horizontalPadding,
+                ),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Select Interior',
+                    style: TextStyle(
+                      color: AppColors.grey700,
+                      fontSize: screenSize.width < 400 ? 18 : 20,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 80,
-              child: Padding(
+              SizedBox(
+                height: 80,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: horizontalPadding,
+                    right: horizontalPadding + 20,
+                    top: 15,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InteriorColorOptions(
+                        interiorColors: InteriorColors.Black_and_White,
+                        price: carModels[controller.index.value]
+                            .interiorColorInfo[InteriorColors.Black_and_White]!
+                            .price
+                            .toString(),
+                      ),
+                      InteriorColorOptions(
+                        interiorColors: InteriorColors.All_Black,
+                        price: carModels[controller.index.value]
+                            .interiorColorInfo[InteriorColors.All_Black]!
+                            .price
+                            .toString(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
                 padding: EdgeInsets.only(
                   left: horizontalPadding,
-                  right: horizontalPadding + 20,
-                  top: 15,
+                  right: horizontalPadding,
+                  top: 5,
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InteriorColorOptions(
-                      interiorColors: InteriorColors.Black_and_White,
-                      price: carModels[controller.index.value]
-                          .interiorColorInfo[InteriorColors.Black_and_White]!
-                          .price
-                          .toString(),
-                    ),
-                    InteriorColorOptions(
-                      interiorColors: InteriorColors.All_Black,
-                      price: carModels[controller.index.value]
-                          .interiorColorInfo[InteriorColors.All_Black]!
-                          .price
-                          .toString(),
-                    ),
-                  ],
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: InteriorColors.values.map(
+                    (color) {
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: InteriorColorCircle(
+                          interiorColor: color,
+                          onTap: () {
+                            controller.selectedInterior.value = color;
+                            controller.carInteriorPrice.value =
+                                carModels[controller.index.value]
+                                    .interiorColorInfo[color]!
+                                    .price;
+                          },
+                        ),
+                      );
+                    },
+                  ).toList(),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: horizontalPadding,
-                right: horizontalPadding,
-                top: 5,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: InteriorColors.values.map(
-                  (color) {
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: InteriorColorCircle(
-                        interiorColor: color,
-                        onTap: () {
-                          controller.selectedInterior.value = color;
-                          controller.carInteriorPrice.value =
-                              carModels[controller.index.value]
-                                  .interiorColorInfo[color]!
-                                  .price;
-                        },
-                      ),
-                    );
-                  },
-                ).toList(),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
         Stack(
           children: [
