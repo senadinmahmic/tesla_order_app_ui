@@ -15,7 +15,7 @@ class SkipToPaymentButton extends GetView<CustomizationController> {
       alignment: Alignment.topRight,
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 25,
+          top: 23,
           right: 20,
         ),
         child: GestureDetector(

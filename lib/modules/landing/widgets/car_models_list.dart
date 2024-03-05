@@ -33,8 +33,9 @@ class CarModelsList extends GetView<LandingController> {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 30,
+                        Container(
+                          color: Colors.red,
+                          height: 35,
                           child: Text(
                             carModels[index].name,
                             style: TextStyle(

@@ -21,7 +21,7 @@ class BottomContainer extends GetView<CustomizationController> {
         duration: const Duration(milliseconds: 300),
         width: screenSize.width,
         height: controller.currentTabPage.value == 0
-            ? (screenSize.height < 800 ? 280 : 355)
+            ? screenSize.height * 0.4
             : controller.currentTabPage.value == 1
                 ? 95
                 : screenSize.height * 0.4,
